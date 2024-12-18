@@ -65,7 +65,7 @@ const patients = [
                 name: 'Carprofen',
                 type: 'Pill',
                 administration: {
-                    frequency: 'Daily',
+                    frequency: 'Every other day',
                     amount: '1 pill',
                     notes: 'Suspend after 3 weeks'
                 }
@@ -100,7 +100,7 @@ const patients = [
             {
                 name: 'Gabepentin',
                 type: 'Liquid',
-                administratin: {
+                administration: {
                     frequency: 'As needed',
                     amount: '0.75 miligrants',
                     notes: 'Must be ingested orally'
