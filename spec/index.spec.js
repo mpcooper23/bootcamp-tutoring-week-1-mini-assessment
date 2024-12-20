@@ -139,4 +139,34 @@ describe("Bootcamp Week 1 Mini-assessment", function(){
             assert.deepEqual(result, correct);
         });
     });
+
+    describe("getOneMedBySpecies", function(){
+        const func = getOneMedBySpecies;
+        it('should be written as an arrow function', function(){
+            const f = func.toString();
+            console.log(f);
+            const regex = /\([a-zA-Z]+, [a-zA-Z]+\)\s=>\s{/g;
+            const match = f.match(regex);
+            if (match){
+                assert.equal(match.length > 0, true);
+            } else {
+                expect(match).to.not.equal(null);
+            }
+        });
+        it('should return an array', function(){
+            assert.equal(Array.isArray(func(patients, 'Dog')), true);
+        });
+        it('should return a correct array of objects', function(){
+            assert.deepEqual(func(patients, 'Dog'), [
+                {
+                    patient: 'Bernie - Dog',
+                    medication: 'Carprofen'
+                },
+                {
+                    patient: 'Bart - Dog',
+                    medication: 'K9 Advantix'
+                }
+            ])
+        });
+    });
 });
