@@ -49,3 +49,32 @@ RETURNS =>
 ]
 */
 ```
+
+4. Create a function called `getOneMedBySpecies` that takes in two parameters - `patients` & `species`. `patients` represents an array of animal patient objects like the one featured in the data.js file; `species` represents a string of an animal's species. This function should use a for loop to iterate through the input array and find each animal that matches the input species. For all of the animals that match the species, the function should then determine if the matching animal only takes one medication. For those animals, the function should create objects like that look like this:
+
+```javascript
+{
+    patient: <patient name> - <patient species>,
+    medication: <medication name>
+}
+```
+
+The function should push these objects into an output array that is returned at the end.
+
+```javascript
+// example output
+getOneMedSpecies(patients, 'Dog');
+/*
+ RETURNS =>
+ [
+    {
+        patient: 'Bernie - Dog',
+        medication: 'Carprofen'
+    },
+    {
+        patient: 'Bart - Dog',
+        medication: 'K9 Advantix'
+    }
+ ]
+*/
+```
