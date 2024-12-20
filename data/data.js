@@ -4,6 +4,7 @@ const patientA = {
     age: 7,
     gender: 'male',
     neutered: true,
+    vaccinationsUpToDate: false,
     medications: [
         {
             name: 'Gabepentin',
@@ -33,6 +34,7 @@ const patients = [
         age: 7,
         gender: 'Male',
         neutered: true,
+        vaccinationsUpToDate: false,
         medications: [
             {
                 name: 'Gabepentin',
@@ -60,6 +62,7 @@ const patients = [
         age: 8,
         gender: 'Male',
         neutered: true,
+        vaccinationsUpToDate: false,
         medications: [
             {
                 name: 'Carprofen',
@@ -78,6 +81,7 @@ const patients = [
         age: 4,
         gender: 'Male',
         neutered: true,
+        vaccinationsUpToDate: true,
         medications: [
             {
                 name: 'K9 Advantix',
@@ -96,6 +100,7 @@ const patients = [
         age: 12,
         gender: 'Female',
         neutered: true,
+        vaccinationsUpToDate: true,
         medications: [
             {
                 name: 'Gabepentin',

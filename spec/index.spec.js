@@ -13,7 +13,7 @@ describe("Bootcamp Week 1 Mini-assessment", function(){
         });
         it('should use template literal syntax', function(){
             const f = func.toString();
-            const regex = /`(?=[$])[$]{([a-zA-Z]+.[a-zA-Z]+|[a-zA-Z]+)}\s-\s\${([a-zA-Z]+.[a-zA-Z]+|[a-zA-Z]+)}\s-\s([a-zA-Z]+.[a-zA-Z]+|[a-zA-Z]+)\s\${([a-zA-Z]+.[a-zA-Z]+|[a-zA-Z]+)}`/g
+            const regex = /`(?=[$])\${([a-zA-Z]+.[a-zA-Z]+|[a-zA-Z]+)}\s\-\s\${([a-zA-Z]+.[a-zA-Z]+|[a-zA-Z]+)}\s-\sAdminister\s\${([a-zA-Z]+.[a-zA-Z]+.[a-zA-Z]+|[a-zA-Z]+)}`/g
             const match = f.match(regex);
             if (!match){
                 expect(match).to.not.equal(null);
@@ -63,7 +63,7 @@ describe("Bootcamp Week 1 Mini-assessment", function(){
         });
         it('should return an array with correctly formatted strings', function(){
             const result = func(patients);
-            const correct = ['age: 12', 'neutered: true', 'age: 8', 'neutered: true'];
+            const correct = ['neutered: true', 'vaccinationsUpToDate: true', 'neutered: true', 'vaccinationsUpToDate: false'];
             assert.deepEqual(result, correct);
         });
     });
