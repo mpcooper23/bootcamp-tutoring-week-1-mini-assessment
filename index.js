@@ -107,8 +107,8 @@ The function should push these objects into an output array that is returned at 
 
 
 I: patients (object data), species (string data)
-O:  
-C: 
+O:  array of objects that include patient and med
+C: for loop
 E:
  */
 
