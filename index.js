@@ -55,7 +55,7 @@ let getObjectKeyValues = (patients) => {
     let output = []; //output array
     for(let i = patients.length - 1; i >= 0; i -= 2){
 for (let key in patients[i]){
-    if(typeof key === 'boolean'){
+    if(typeof patients[i][key] === 'boolean'){
 output.push(key + patients[i][key])//push key, key/value pairs
 }
     }
@@ -106,7 +106,7 @@ let getDailyMedications = (patients) => {
 The function should push these objects into an output array that is returned at the end.
 
 
-I: patients (object data), species (string data)
+I: patients "ARRAY of Objects", species (string data)
 O:  array of objects that include patient and med
 C: for loop
 E:
@@ -116,7 +116,6 @@ let getOneMedBySpecies = (patients, species) => {
     let output = [];
     for(let i = 0; i <= patients.length; i++){
 if (patients[i].species === species){
-    for (let j = 0; j <= patients[i].medications.length; j++){
         if(patients[i].medications.length === 1){
 let newObj = {
     patient: patients[i].name + patients[i].species,
@@ -126,7 +125,7 @@ let newObj = {
     output.push(newObj)
     }
 }
-    }
+    
     return output;
 }
 
