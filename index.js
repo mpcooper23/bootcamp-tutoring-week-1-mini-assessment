@@ -35,7 +35,9 @@ for (let i = 0; i <= patient.medications.length; i++){
  * that represents an array of animal patients like the one featured in data.js. 
  * This function should iterate through every other object backwards using a for loop. At each iteration, 
  * the function should use a for in loop to access each key of the object. For every property that has a 
- * boolean value attached to it, the function shoud add a string to an output array like this: '<key>: <value>'. 
+ * boolean value attached to it, the function shoud add a string to an output array like this: 
+ * 
+ * '<key>: <value>'. 
  * The function should return this array of strings at the end.
  * 
 // example output
@@ -43,8 +45,9 @@ getObjectKeyValues(patients); // => ['age: 12', 'neutered: true', 'age: 8', 'neu
 
 
 I: patients (object data)
-O:  
-C: iterate through every other object using reverse for loop
+O:  array of boolean keys in a string formatted as such: '<key>: <value>'. 
+C: iterate through every other object using reverse for loop; for-in loop to access object keys; 
+conditional to determine if key is a boolean
 E:
  */
 
@@ -52,9 +55,11 @@ let getObjectKeyValues = (patients) => {
     let output = []; //output array
     for(let i = patients.length - 1; i >= 0; i -= 2){
 for (let key in patients[i]){
-output.push([key, patients[i][key]])//push key, key/value pairs
+    if(typeof key === 'boolean'){
+output.push(key + patients[i][key])//push key, key/value pairs
 }
     }
+}
     return output //return array
 }
 
@@ -68,8 +73,8 @@ output.push([key, patients[i][key]])//push key, key/value pairs
  * The function should return this output array at the end.
  * 
 I: patients (object data)
-O:  
-C: 
+O:  output array of daily meds
+C: for loop, nested for loop
 E:
  */
 
