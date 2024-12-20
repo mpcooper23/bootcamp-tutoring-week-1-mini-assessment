@@ -89,19 +89,28 @@ let getDailyMedications = (patients) => {
 
 // Problem #4 //
 /**
- * Create a function called getDailyMedications that takes in one parameter - patients - 
- * that represents an array of animal patients like the one featured in data.js. 
- * This function should use a for loop to access each animal in the patients array. 
- * At each iteration, the function should use a nested for loop to access each animal's 
- * medications one at a time. Every medication that is taken daily should be added to an output array. 
- * The function should return this output array at the end.
-I: patients (object data)
+ Create a function called getOneMedBySpecies that takes in two parameters - patients & species. 
+ patients represents an array of animal patient objects like the one featured in the data.js file; 
+ species represents a string of an animal's species. This function should use a for loop to iterate 
+ through the input array and find each animal that matches the input species. For all of the animals 
+ that match the species, the function should then determine if the matching animal only takes one 
+ medication. For those animals, the function should create objects like that look like this:
+{
+    patient: <patient name> - <patient species>,
+    medication: <medication name>
+}
+The function should push these objects into an output array that is returned at the end.
+
+
+I: patients (object data), species (string data)
 O:  
 C: 
 E:
  */
 
-let getOneMedBySpecies = (patients) => {
-    
+let getOneMedBySpecies = (patients, species) => {
+    for(let i = 0; i <= patients.length; i++){
+
+    }
 }
 
