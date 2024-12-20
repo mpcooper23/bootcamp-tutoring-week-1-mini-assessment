@@ -23,7 +23,7 @@ E:
 let getLastMedicationInfo = (patient) => {
 for (let i = 0; i <= patient.medications.length; i++){
     const medication = patient.medications[i];
-    console.log(`${medication.name} - ${medication.type} - ${medication.administration.frequency}`)
+   return `${medication.name} - ${medication.type} - ${medication.administration.frequency}`
         }
     
 }
