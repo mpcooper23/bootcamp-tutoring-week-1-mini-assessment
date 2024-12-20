@@ -21,14 +21,13 @@ E:
  */
 
 let getLastMedicationInfo = (patient) => {
-for (let i = 0; i <= patient.length; i++){
-    if(patient[i].includes(patient.medications)){
-        for (let j = 0; j < medications[i].length; j++){
-            console.log(`${patient[i].medications[j].name} - ${patient[i].medications[j].type} - ${patient[i].medications[j].administration.frequency}`)
+for (let i = 0; i <= patient.medications.length; i++){
+    const medication = patient.medications[i];
+    console.log(`${medication.name} - ${medication.type} - ${medication.administration.frequency}`)
         }
-    }
+    
 }
-}
+
 
 // Problem #2 //
 /**
@@ -51,9 +50,9 @@ E:
 
 let getObjectKeyValues = (patients) => {
     let output = []; //output array
-    for(let i = patients.length - 1; i <= 0; i -= 2){
+    for(let i = patients.length - 1; i >= 0; i -= 2){
 for (let key in patients[i]){
-output.push(patients[i][key], patients[i][value])
+output.push([key, patients[i][key]])//push key, key/value pairs
 }
     }
     return output //return array
@@ -76,11 +75,11 @@ E:
 
 let getDailyMedications = (patients) => {
     let output = [];
-    for(let i = 0; i <= patients.length; i++){
+    for(let i = 0; i < patients.length; i++){
         let animalMeds = patients[i].medications
-        for(let j = 0; j <= animalMeds; j++){
+        for(let j = 0; j <= animalMeds.length; j++){
             if(animalMeds[j].administration.frequency === 'Daily'){
-                output.push(animalMeds[j].administration.frequency)
+                output.push(animalMeds[j])
             }
         }
     }
@@ -119,8 +118,8 @@ let newObj = {
     medication: patients[i].medications[j].name
 } 
         }  
+    output.push(newObj)
     }
-  output.push(newObj)
 }
     }
     return output;
