@@ -3,52 +3,105 @@ Only declare your variables with const and let.
 */
 
 // Problem #1 //
+
+/**
+ * Create a function called getLastMedicationInfo that takes in one parameter - patient - 
+ * that represents an animal patient like the one featured in the data.js file. 
+ * This function should use the principles of object and array access to the access 
+ * the input patient's last medication and return a string of the name of the medication, 
+ * the type of medication, and how frequently to administer.
+// example output
+getLastMedicationInfo(patientA); // =>  "Laxatone - Gel - Administer Daily"
+
+
+I: patient (object data)
+O:  return formatted string that accesses medication info
+C: template literal syntax; object & array access
+E:
+ */
+
 let getLastMedicationInfo = (patient) => {
-    const last = patient.medications[patient.medications.length - 1];
-    return `${last.name} - ${last.type} - Administer ${last.administration.frequency}`;
-};
+for (let i = 0; i <= patient.length; i++){
+    if(patient[i].includes(patient.medications)){
+        for (let j = 0; j < medications[i].length; j++){
+            console.log(`${patient[i].medications[j].name} - ${patient[i].medications[j].type} - ${patient[i].medications[j].administration.frequency}`)
+        }
+    }
+}
+}
 
 // Problem #2 //
+/**
+ * Create a function called getObjectKeyValues that takes in one parameter - patients - 
+ * that represents an array of animal patients like the one featured in data.js. 
+ * This function should iterate through every other object backwards using a for loop. At each iteration, 
+ * the function should use a for in loop to access each key of the object. For every property that has a 
+ * boolean value attached to it, the function shoud add a string to an output array like this: '<key>: <value>'. 
+ * The function should return this array of strings at the end.
+ * 
+// example output
+getObjectKeyValues(patients); // => ['age: 12', 'neutered: true', 'age: 8', 'neutered: true']
+
+
+I: patients (object data)
+O:  
+C: iterate through every other object using reverse for loop
+E:
+ */
+
 let getObjectKeyValues = (patients) => {
-    const output = [];
-    for (let i = patients.length - 1; i >= 0; i-=2){
-        for (let key in patients[i]){
-            if (typeof patients[i][key] === 'boolean'){
-                output.push(`${key}: ${patients[i][key]}`);
-            }
-        }
+    let output = []; //output array
+    for(let i = patients.length - 1; i <= 0; i -= 2){
+for (let key in patients[i]){
+output.push(patients[i][key], patients[i][value])
+}
     }
-    return output;
-};
+    return output //return array
+}
 
 // Problem #3 //
+/**
+ * Create a function called getDailyMedications that takes in one parameter - patients - 
+ * that represents an array of animal patients like the one featured in data.js. 
+ * This function should use a for loop to access each animal in the patients array. 
+ * At each iteration, the function should use a nested for loop to access each animal's 
+ * medications one at a time. Every medication that is taken daily should be added to an output array. 
+ * The function should return this output array at the end.
+ * 
+I: patients (object data)
+O:  
+C: 
+E:
+ */
+
 let getDailyMedications = (patients) => {
-    const output = [];
-    for (let i = 0; i < patients.length; i++){
-        const meds = patients[i].medications;
-        for (let j = 0; j < meds.length; j++){
-            console.log(meds);
-            if (meds[j].administration.frequency === 'Daily'){
-                output.push(meds[j]);
+    let output = [];
+    for(let i = 0; i <= patients.length; i++){
+        let animalMeds = patients[i].medications
+        for(let j = 0; j <= animalMeds; j++){
+            if(animalMeds[j].administration.frequency === 'Daily'){
+                output.push(animalMeds[j].administration.frequency)
             }
         }
     }
     return output;
-};
+}
 
 // Problem #4 //
-let getOneMedBySpecies = (patients, species) => {
-    const output = [];
-    for (let i = 0; i < patients.length; i++){
-        if (patients[i].species === species){
-            if (patients[i].medications.length === 1){
-                output.push({
-                    patient: `${patients[i].name} - ${patients[i].species}`,
-                    medication: `${patients[i].medications[0].name}`,
-                });
-            }
-        }
-    }
-    return output;
-};
+/**
+ * Create a function called getDailyMedications that takes in one parameter - patients - 
+ * that represents an array of animal patients like the one featured in data.js. 
+ * This function should use a for loop to access each animal in the patients array. 
+ * At each iteration, the function should use a nested for loop to access each animal's 
+ * medications one at a time. Every medication that is taken daily should be added to an output array. 
+ * The function should return this output array at the end.
+I: patients (object data)
+O:  
+C: 
+E:
+ */
+
+let getOneMedBySpecies = (patients) => {
+    
+}
 
