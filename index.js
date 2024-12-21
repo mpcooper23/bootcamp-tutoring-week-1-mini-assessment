@@ -51,9 +51,10 @@ E:
 let getObjectKeyValues = (patients) => {
     let output = []; //output array
     for(let i = patients.length - 1; i >= 0; i -= 2){
-for (let key in patients[i]){
-    if(typeof patients[i][key] === 'boolean'){
-output.push(`${key} ${patients[i][key]}`)//push key, key/value pairs
+        const patient = patients[i]
+for (let key in patient){
+    if(typeof patient[key] === 'boolean'){
+output.push(`${key}: ${patient[key]}`)//push key, key/value pairs
 }
     }
 }
