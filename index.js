@@ -112,18 +112,18 @@ E:
 
 let getOneMedBySpecies = (patients, species) => {
     let output = [];
-    for(let i = 0; i <= patients.length; i++){
+    for(let i = 0; i < patients.length; i++){
 if (patients[i].species === species){
         if(patients[i].medications.length === 1){
-let newObj = {
-    patient: patients[i].name + patients[i].species,
-    medication: patients[i].medications[j].name
+            let animal = patients[i]
+var newObj = {
+    patient: `${animal.name} - ${animal.species}`,
+    medication: `${animal.medications[0].name}`
 } 
+output.push(newObj)
         }  
-    output.push(newObj)
     }
 }
-    
     return output;
 }
 
