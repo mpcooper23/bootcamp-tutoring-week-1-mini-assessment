@@ -21,11 +21,8 @@ E:
  */
 
 let getLastMedicationInfo = (patient) => {
-for (let i = 0; i <= patient.medications.length; i++){
-    const medication = patient.medications[i];
-   return `${medication.name} - ${medication.type} - ${medication.administration.frequency}`
-        }
-    
+let last = patient.medications[patient.medications.length - 1];
+return `${last.name} - ${last.type} - Administer ${last.administration.frequency}`
 }
 
 
