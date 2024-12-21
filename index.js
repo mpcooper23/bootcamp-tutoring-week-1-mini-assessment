@@ -80,7 +80,7 @@ let getDailyMedications = (patients) => {
     let output = [];
     for(let i = 0; i < patients.length; i++){
         let animalMeds = patients[i].medications
-        for(let j = 0; j <= animalMeds.length; j++){
+        for(let j = 0; j < animalMeds.length; j++){
             if(animalMeds[j].administration.frequency === 'Daily'){
                 output.push(animalMeds[j])
             }
