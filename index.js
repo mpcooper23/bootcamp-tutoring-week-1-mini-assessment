@@ -21,8 +21,11 @@ E:
  */
 
 let getLastMedicationInfo = (patient) => {
-let last = patient.medications[patient.medications.length - 1];
-return `${last.name} - ${last.type} - Administer ${last.administration.frequency}`
+
+    let last = patient.medications[patient.medications.length - 1]
+
+    
+    return `${last.name} - ${last.type} - Administer ${last.administration.frequency}`
 }
 
 
@@ -48,18 +51,7 @@ conditional to determine if key is a boolean
 E:
  */
 
-let getObjectKeyValues = (patients) => {
-    let output = []; //output array
-    for(let i = patients.length - 1; i >= 0; i -= 2){
-        const patient = patients[i]
-for (let key in patient){
-    if(typeof patient[key] === 'boolean'){
-output.push(`${key}: ${patient[key]}`)//push key, key/value pairs
-}
-    }
-}
-    return output //return array
-}
+
 
 // Problem #3 //
 /**
@@ -76,18 +68,7 @@ C: for loop, nested for loop
 E:
  */
 
-let getDailyMedications = (patients) => {
-    let output = [];
-    for(let i = 0; i < patients.length; i++){
-        let animalMeds = patients[i].medications
-        for(let j = 0; j < animalMeds.length; j++){
-            if(animalMeds[j].administration.frequency === 'Daily'){
-                output.push(animalMeds[j])
-            }
-        }
-    }
-    return output;
-}
+
 
 // Problem #4 //
 /**
@@ -110,20 +91,6 @@ C: for loop
 E:
  */
 
-let getOneMedBySpecies = (patients, species) => {
-    let output = [];
-    for(let i = 0; i < patients.length; i++){
-if (patients[i].species === species){
-        if(patients[i].medications.length === 1){
-            let animal = patients[i]
-var newObj = {
-    patient: `${animal.name} - ${animal.species}`,
-    medication: `${animal.medications[0].name}`
-} 
-output.push(newObj)
-        }  
-    }
-}
-    return output;
-}
+
+
 
