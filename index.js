@@ -51,7 +51,18 @@ conditional to determine if key is a boolean
 E:
  */
 
-
+let getObjectKeyValues = (patients) => {
+    let output = [];
+    for (let i = patients.length - 1; i >= 0; i -= 2){
+        let patient = patients[i]
+        for (let key in patient){
+            if(typeof patient[key] === 'boolean'){
+output.push(`${key}: ${patient[key]}`)
+            }
+        }
+    }
+    return output;
+}
 
 // Problem #3 //
 /**
